@@ -1,26 +1,26 @@
 Class {
-	#name : #RoundPeg,
+	#name : #SquarePeg,
 	#superclass : #Object,
 	#instVars : [
-		'radius'
+		'width'
 	],
 	#category : #'DesignPatterns-Adapter'
 }
 
 { #category : #'instance creation' }
-RoundPeg class >> radius: aNumber [
+SquarePeg class >> width: aNumber [
 
-	^ self new radius: aNumber
+  ^ self new width: aNumber
 ]
 
 { #category : #accessing }
-RoundPeg >> radius [
+SquarePeg >> width [
 
-	^ radius
+  ^ width
 ]
 
 { #category : #accessing }
-RoundPeg >> radius: aNumber [
+SquarePeg >> width: aNumber [
 
-	radius := aNumber
+  width := aNumber
 ]
