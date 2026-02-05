@@ -7,6 +7,12 @@ Class {
 	#category : #'DesignPatterns-Adapter'
 }
 
+{ #category : #'instance creation' }
+SquarePegToRoundHoleAdapter class >> squarePeg: aSquarePeg [
+
+  ^ self new squarePeg: aSquarePeg
+]
+
 { #category : #accessing }
 SquarePegToRoundHoleAdapter >> radius [
 
