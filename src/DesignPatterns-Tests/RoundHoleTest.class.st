@@ -24,7 +24,7 @@ RoundHoleTest >> testFitsSquarePeg [
 	1 to: 5 do: [ :aNumber | 
 		"Arrange"
 		roundHole := RoundHole radius: 5.
-		width := 5 * 2 sqrt.
+		width := aNumber * 2 sqrt.
 		squarePeg := SquarePeg width: width.
 		squarePegAdapter := SquarePegToRoundHoleAdapter squarePeg: squarePeg.
 
