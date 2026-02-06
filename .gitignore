@@ -1,0 +1,12 @@
+# Pharo image and changes
+*.image
+*.changes
+
+# Pharo sources
+*.sources
+
+# Pharo debug log
+PharoDebug.log
+
+# Pharo local directory
+pharo-local/
