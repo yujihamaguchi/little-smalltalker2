@@ -8,9 +8,9 @@ Class {
 }
 
 { #category : #'instance creation' }
-RoundPeg class >> radius: aNumber [
+RoundPeg class >> radius: arg1 [
 
-	^ self new radius: aNumber
+	^ self new radius: arg1
 ]
 
 { #category : #accessing }
@@ -20,7 +20,7 @@ RoundPeg >> radius [
 ]
 
 { #category : #accessing }
-RoundPeg >> radius: aNumber [
+RoundPeg >> radius: arg1 [
 
-	radius := aNumber
+	radius := arg1
 ]

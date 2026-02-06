@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #initialization }
-Device >> initialize [ 
+Device >> initialize [
 
 	super initialize.
 	isPowerOn := false
@@ -23,7 +23,7 @@ Device >> isPowerOff [
 { #category : #accessing }
 Device >> isPowerOn [
 
-	^ isPowerOn 
+	^ isPowerOn
 ]
 
 { #category : #commands }

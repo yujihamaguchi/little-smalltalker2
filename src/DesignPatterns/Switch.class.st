@@ -7,10 +7,16 @@ Class {
 	#category : #'DesignPatterns-Bridge'
 }
 
-{ #category : #accessing }
-Switch >> device: aDevice [
+{ #category : #'instance creation' }
+Switch class >> device: arg1 [
 
-	device := aDevice 
+	^ self new device: arg1
+]
+
+{ #category : #accessing }
+Switch >> device: arg1 [
+
+	device := arg1
 ]
 
 { #category : #switching }
