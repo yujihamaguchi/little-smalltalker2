@@ -8,19 +8,19 @@ Class {
 }
 
 { #category : #'instance creation' }
-SquarePeg class >> width: aNumber [
+SquarePeg class >> width: arg1 [
 
-  ^ self new width: aNumber
+	^ self new width: arg1
 ]
 
 { #category : #accessing }
 SquarePeg >> width [
 
-  ^ width
+	^ width
 ]
 
 { #category : #accessing }
-SquarePeg >> width: aNumber [
+SquarePeg >> width: arg1 [
 
-  width := aNumber
+	width := arg1
 ]

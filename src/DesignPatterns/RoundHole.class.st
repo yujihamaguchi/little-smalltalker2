@@ -1,6 +1,8 @@
 Class {
 	#name : #RoundHole,
 	#superclass : #Object,
+	#traits : 'TRadius',
+	#classTraits : 'TRadius classTrait',
 	#instVars : [
 		'radius'
 	],
@@ -8,25 +10,25 @@ Class {
 }
 
 { #category : #'instance creation' }
-RoundHole class >> radius: number [
+RoundHole class >> radius: arg1 [
 
-	^ self new radius: number
+	^ self new radius: arg1
 ]
 
 { #category : #testing }
-RoundHole >> fits: aPeg [
+RoundHole >> fits: arg1 [
 
-	^ radius >= aPeg radius
+	^ radius >= arg1 radius
 ]
 
 { #category : #accessing }
 RoundHole >> radius [
 
-  ^ radius
+	^ radius
 ]
 
 { #category : #accessing }
-RoundHole >> radius: aNumber [
+RoundHole >> radius: arg1 [
 
-	radius := aNumber
+	radius := arg1
 ]
