@@ -10,15 +10,15 @@ Class {
 { #category : #processing }
 TriLevelSwitch >> high [
 	
-	level := #high.
-	device high
+	level := High uniqueInstance.
+	level apply: device
 ]
 
 { #category : #initialization }
 TriLevelSwitch >> initialize [ 
 
 	super initialize.
-	level := #medium.
+	level := Medium uniqueInstance.
 	^ self
 ]
 
@@ -31,20 +31,20 @@ TriLevelSwitch >> level [
 { #category : #processing }
 TriLevelSwitch >> low [
 
-	level := #low.
-	device low
+	level := Low uniqueInstance.
+	level apply: device
 ]
 
 { #category : #processing }
 TriLevelSwitch >> medium [
 
-	level := #medium.
-	device medium
+	level := Medium uniqueInstance.
+	level apply: device
 ]
 
 { #category : #switching }
 TriLevelSwitch >> turnOn [
 
 	super turnOn.
-	device perform: level
+	level apply: device
 ]

@@ -1,6 +1,8 @@
 Class {
 	#name : #Light,
 	#superclass : #Device,
+	#traits : 'TTriLevelSwitchable',
+	#classTraits : 'TTriLevelSwitchable classTrait',
 	#instVars : [
 		'brightness'
 	],
