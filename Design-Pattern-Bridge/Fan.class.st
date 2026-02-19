@@ -1,27 +1,39 @@
 Class {
 	#name : #Fan,
 	#superclass : #Device,
-	#traits : 'TTriLevelSwitchable',
-	#classTraits : 'TTriLevelSwitchable classTrait',
+	#traits : 'TTriLevelSwitchable + TOutputControllable',
+	#classTraits : 'TTriLevelSwitchable classTrait + TOutputControllable classTrait',
 	#instVars : [
 		'speed'
 	],
 	#category : #'Design-Pattern-Bridge'
 }
 
+{ #category : #modifying }
+Fan >> defaultOutput [
+
+	speed := 50
+]
+
 { #category : #processing }
+Fan >> downBy: aNumber [
+
+	speed := speed - aNumber
+]
+
+{ #category : #modifying }
 Fan >> high [
 
 	speed := #max
 ]
 
-{ #category : #processing }
+{ #category : #modifying }
 Fan >> low [
 
 	speed := #min
 ]
 
-{ #category : #processing }
+{ #category : #modifying }
 Fan >> medium [
 
 	speed := #mid
@@ -38,4 +50,10 @@ Fan >> powerOff [
 Fan >> speed [
 
 	^ speed
+]
+
+{ #category : #processing }
+Fan >> upBy: aNumber [
+
+	speed := speed + aNumber
 ]
