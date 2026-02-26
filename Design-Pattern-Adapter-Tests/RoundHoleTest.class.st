@@ -1,7 +1,7 @@
 Class {
 	#name : #RoundHoleTest,
 	#superclass : #TestCase,
-	#category : #'Design-Pattern-Tests'
+	#category : #'Design-Pattern-Adapter-Tests'
 }
 
 { #category : #tests }

@@ -6,7 +6,7 @@ Class {
 	#instVars : [
 		'squarePeg'
 	],
-	#category : #'Design-Pattern'
+	#category : #'Design-Pattern-Adapter-Design-Pattern-Adapter'
 }
 
 { #category : #'instance creation' }

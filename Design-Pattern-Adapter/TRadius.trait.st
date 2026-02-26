@@ -1,6 +1,6 @@
 Trait {
 	#name : #TRadius,
-	#category : #'Design-Pattern'
+	#category : #'Design-Pattern-Adapter-Design-Pattern-Adapter'
 }
 
 { #category : #accessing }

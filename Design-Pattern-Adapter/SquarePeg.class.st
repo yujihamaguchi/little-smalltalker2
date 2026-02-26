@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'width'
 	],
-	#category : #'Design-Pattern'
+	#category : #'Design-Pattern-Adapter-Design-Pattern-Adapter'
 }
 
 { #category : #'instance creation' }

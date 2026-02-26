@@ -1,10 +1,6 @@
 Class {
 	#name : #CarBodyBuilder,
-	#superclass : #Object,
-	#instVars : [
-		'engine',
-		'seats'
-	],
+	#superclass : #CarBuilder,
 	#category : #'Design-Pattern-Builder'
 }
 
@@ -16,16 +12,4 @@ CarBodyBuilder >> build [
 	carBody engine: engine.
 	carBody seats: seats.
 	^ carBody
-]
-
-{ #category : #accessing }
-CarBodyBuilder >> withEngine: anEngine [
-
-	engine := anEngine 
-]
-
-{ #category : #accessing }
-CarBodyBuilder >> withSeats: theSeats [
-
-	seats := theSeats 
 ]

@@ -1,5 +1,5 @@
 Class {
-	#name : #CarBody,
-	#superclass : #CarProduct,
+	#name : #NormalEngine,
+	#superclass : #Object,
 	#category : #'Design-Pattern-Builder'
 }

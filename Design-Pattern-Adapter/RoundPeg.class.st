@@ -1,34 +1,28 @@
 Class {
-	#name : #RoundHole,
+	#name : #RoundPeg,
 	#superclass : #Object,
 	#traits : 'TRadius',
 	#classTraits : 'TRadius classTrait',
 	#instVars : [
 		'radius'
 	],
-	#category : #'Design-Pattern'
+	#category : #'Design-Pattern-Adapter-Design-Pattern-Adapter'
 }
 
 { #category : #'instance creation' }
-RoundHole class >> radius: aNumber [
+RoundPeg class >> radius: aNumber [
 
 	^ self new radius: aNumber
 ]
 
-{ #category : #testing }
-RoundHole >> fits: anObject [
-
-	^ self radius >= anObject radius
-]
-
 { #category : #accessing }
-RoundHole >> radius [
+RoundPeg >> radius [
 
 	^ radius
 ]
 
 { #category : #accessing }
-RoundHole >> radius: aNumber [
+RoundPeg >> radius: aNumber [
 
 	radius := aNumber
 ]
