@@ -27,7 +27,7 @@ CarProduct >> seats [
 ]
 
 { #category : #accessing }
-CarProduct >> seats: theSeats [
+CarProduct >> seats: aSeatCollection [
 
-	seats := theSeats 
+	seats := aSeatCollection 
 ]

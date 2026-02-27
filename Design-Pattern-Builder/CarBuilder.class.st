@@ -15,13 +15,15 @@ CarBuilder >> build [
 ]
 
 { #category : #accessing }
-CarBuilder >> withEngine: anEngine [
+CarBuilder >> engine: anEngine [
 
-	engine := anEngine 
+	engine := anEngine.
+	^ self
 ]
 
 { #category : #accessing }
-CarBuilder >> withSeats: theSeats [
+CarBuilder >> seats: aSeatCollection [
 
-	seats := theSeats 
+	seats := aSeatCollection.
+	^ self
 ]

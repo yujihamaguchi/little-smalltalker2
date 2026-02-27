@@ -4,12 +4,12 @@ Class {
 	#category : #'Design-Pattern-Builder'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #processing }
 Director >> constructSUVCar: aBuilder [
 
 	^ aBuilder
-		  withEngine: NormalEngine new;
-		  withSeats: {
+		  engine: NormalEngine new;
+		  seats: {
 				  Seat new.
 				  Seat new.
 				  Seat new.
@@ -17,12 +17,12 @@ Director >> constructSUVCar: aBuilder [
 		  build
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #processing }
 Director >> constructSportsCar: aBuilder [
 
 	^ aBuilder
-		  withEngine: SportsEngine new;
-		  withSeats: {
+		  engine: SportsEngine new;
+		  seats: {
 				  Seat new.
 				  Seat new };
 		  build

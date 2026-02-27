@@ -11,5 +11,5 @@ CarManualBuilder >> build [
 	carManual := CarManual new.
 	carManual engine: engine class name, ' equipped'.
 	carManual seats: seats size asString, ' seats'.
-	^ carManual.
+	^ carManual
 ]
