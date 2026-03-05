@@ -1,5 +1,5 @@
 Class {
-	#name : #HandlerTest,
+	#name : #ResponderTest,
 	#superclass : #TestCase,
 	#instVars : [
 		'ceo',
@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : #running }
-HandlerTest >> setUp [
+ResponderTest >> setUp [
 
 	ceo := CEO next: nil.
 	generalManager := GeneralManager next: ceo.
@@ -18,7 +18,7 @@ HandlerTest >> setUp [
 ]
 
 { #category : #tests }
-HandlerTest >> testCEOApprovesAnyLeaveRequest [
+ResponderTest >> testCEOApprovesAnyLeaveRequest [
 
 	| leaveRequest result |
 	"Arrange"
@@ -33,7 +33,7 @@ HandlerTest >> testCEOApprovesAnyLeaveRequest [
 ]
 
 { #category : #tests }
-HandlerTest >> testGeneralManagerApprovesLeaveRequestWithin5Days [
+ResponderTest >> testGeneralManagerApprovesLeaveRequestWithin5Days [
 
 	| leaveRequest result |
 	"Arrange"
@@ -48,7 +48,7 @@ HandlerTest >> testGeneralManagerApprovesLeaveRequestWithin5Days [
 ]
 
 { #category : #tests }
-HandlerTest >> testManagerHandlesLeaveRequestWithin3Days [
+ResponderTest >> testManagerHandlesLeaveRequestWithin3Days [
 
 	| leaveRequest result |
 	"Arrange"
