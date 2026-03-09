@@ -2,32 +2,29 @@ Class {
 	#name : #Editor,
 	#superclass : #Object,
 	#instVars : [
-		'contents',
-		'clipboard'
+		'commandDictionary'
 	],
 	#category : #'Design-Pattern-Command'
 }
 
-{ #category : #accessing }
-Editor >> clipboard [
+{ #category : #adding }
+Editor >> addCommand: aCommand name: aSymbol [
 
-	^ clipboard
+	commandDictionary at: aSymbol put: aCommand
+
+	
 ]
 
-{ #category : #accessing }
-Editor >> clipboard: someContents [
+{ #category : #initialization }
+Editor >> initialize [
 
-	clipboard := someContents
+	super initialize.
+	commandDictionary := Dictionary new.
+	^ self
 ]
 
-{ #category : #accessing }
-Editor >> contents [
+{ #category : #processing }
+Editor >> pushButton: aSymbol [
 
-	^ contents
-]
-
-{ #category : #accessing }
-Editor >> contents: someContents [
-
-	contents := someContents 
+	(commandDictionary at: aSymbol) execute
 ]

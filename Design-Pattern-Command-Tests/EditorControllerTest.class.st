@@ -1,30 +1,25 @@
 Class {
 	#name : #EditorControllerTest,
 	#superclass : #TestCase,
-	#instVars : [
-		'ceo',
-		'generalManager',
-		'manager'
-	],
 	#category : #'Design-Pattern-Command-Tests'
 }
 
 { #category : #tests }
 EditorControllerTest >> testCutCommand [
 
-	| editor commandInvoker |
+	| document os editor |
 	"Arrange"
+	document := Document new.
+	document contents: 'Foo'.
+	os := OS new.
+	self assert: os clipboard equals: ''.
 	editor := Editor new.
-	editor contents: 'Foo'.
-	commandInvoker := CommandInvoker new.
-	commandInvoker 
-		addCommand: (CutCommand receiver: editor)
-		name: #cut.
+	editor addCommand: (CutCommand document: document os: os) name: #cut.
 
 	"Act"
-	commandInvoker pushButton: #cut.
+	editor pushButton: #cut.
 
 	"Assert"
-	self assert: editor contents equals: ''.
-	self assert: editor clipboard equals: 'Foo'
+	self assert: document contents equals: ''.
+	self assert: os clipboard equals: 'Foo'
 ]

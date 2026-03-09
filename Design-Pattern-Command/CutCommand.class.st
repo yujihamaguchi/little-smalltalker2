@@ -2,26 +2,29 @@ Class {
 	#name : #CutCommand,
 	#superclass : #Object,
 	#instVars : [
-		'receiver'
+		'document',
+		'os'
 	],
 	#category : #'Design-Pattern-Command'
 }
 
 { #category : #accessing }
-CutCommand class >> receiver: aReceiver [
+CutCommand class >> document: aDocument os: anOS [
 
-	^ self new receiver: aReceiver
+	^ self new document: aDocument os: anOS
+]
+
+{ #category : #accessing }
+CutCommand >> document: aDocument os: anOS [
+
+	document := aDocument .
+	os := anOS.
+	^ self
 ]
 
 { #category : #execution }
 CutCommand >> execute [
 
-	receiver clipboard: receiver contents.
-	receiver contents: ''
-]
-
-{ #category : #accessing }
-CutCommand >> receiver: aReceiver [
-
-	receiver := aReceiver
+	os clipboard: document contents.
+	document contents: ''
 ]
