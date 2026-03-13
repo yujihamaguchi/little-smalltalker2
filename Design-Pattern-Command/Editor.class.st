@@ -2,7 +2,8 @@ Class {
 	#name : #Editor,
 	#superclass : #Object,
 	#instVars : [
-		'commandDictionary'
+		'commandDictionary',
+		'lastCommand'
 	],
 	#category : #'Design-Pattern-Command'
 }
@@ -26,5 +27,14 @@ Editor >> initialize [
 { #category : #processing }
 Editor >> pushButton: aSymbol [
 
-	(commandDictionary at: aSymbol) execute
+	| command |
+	command := commandDictionary at: aSymbol.
+	command execute.
+	lastCommand := command
+]
+
+{ #category : #'as yet unclassified' }
+Editor >> pushUndoButton [
+
+	lastCommand undo
 ]
