@@ -1,5 +1,5 @@
 Class {
-	#name : #EditorControllerTest,
+	#name : #EditorTest,
 	#superclass : #TestCase,
 	#instVars : [
 		'document',
@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : #running }
-EditorControllerTest >> setUp [
+EditorTest >> setUp [
 
 	"Arrange"
 	editor := Editor new.
@@ -30,7 +30,7 @@ EditorControllerTest >> setUp [
 ]
 
 { #category : #tests }
-EditorControllerTest >> testCopyCommand [
+EditorTest >> testCopyCommand [
 
 	"Act"
 	editor pushButton: #copy.
@@ -41,7 +41,7 @@ EditorControllerTest >> testCopyCommand [
 ]
 
 { #category : #tests }
-EditorControllerTest >> testCutCommand [
+EditorTest >> testCutCommand [
 
 	"Act"
 	editor pushButton: #cut.
@@ -52,7 +52,7 @@ EditorControllerTest >> testCutCommand [
 ]
 
 { #category : #tests }
-EditorControllerTest >> testPasteCommand [
+EditorTest >> testPasteCommand [
 
 	"Arrange"
 	os clipboard: '!!!'.
@@ -66,7 +66,25 @@ EditorControllerTest >> testPasteCommand [
 ]
 
 { #category : #tests }
-EditorControllerTest >> testUndoCutCommand [
+EditorTest >> testUndoCopyCommand [
+
+	| documentContents |
+	"Arrange"
+	documentContents := 'Hello world'.
+	document contents: documentContents.
+	editor pushButton: #copy.
+	self assert: os clipboard equals: documentContents.
+
+	"Act"
+	editor pushUndoButton.
+
+
+	"Assert"
+	self assert: os clipboard equals: documentContents
+]
+
+{ #category : #tests }
+EditorTest >> testUndoCutCommand [
 
 	"Arrange"
 	editor pushButton: #cut.
@@ -79,4 +97,28 @@ EditorControllerTest >> testUndoCutCommand [
 	"Assert"
 	self assert: document contents equals: 'Hello world'.
 	self assert: os clipboard equals: 'Hello world'
+]
+
+{ #category : #tests }
+EditorTest >> testUndoPasteCommand [
+
+	"Arrange"
+	document contents: 'Hello '.
+	os clipboard: 'world'.
+	editor pushButton: #paste.
+	self assert: document contents equals: 'Hello world'.
+
+	"Act"
+	editor pushUndoButton.
+
+	"Assert"
+	self assert: document contents equals: 'Hello '.
+	self assert: os clipboard equals: 'world'
+]
+
+{ #category : #tests }
+EditorTest >> testUndoWithoutLastCommand [
+
+	"Act & Assert"
+	self shouldnt: [ editor pushUndoButton ] raise: Error
 ]

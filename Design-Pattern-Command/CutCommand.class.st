@@ -4,14 +4,14 @@ Class {
 	#category : #'Design-Pattern-Command'
 }
 
-{ #category : #execution }
+{ #category : #operations }
 CutCommand >> execute [
 
 	os clipboard: document contents.
 	document contents: ''
 ]
 
-{ #category : #'menu messages' }
+{ #category : #operations }
 CutCommand >> undo [
 
 	document contents: os clipboard

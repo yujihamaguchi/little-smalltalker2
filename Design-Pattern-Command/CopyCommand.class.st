@@ -4,8 +4,14 @@ Class {
 	#category : #'Design-Pattern-Command'
 }
 
-{ #category : #execution }
+{ #category : #operations }
 CopyCommand >> execute [
 
 	os clipboard: document contents
+]
+
+{ #category : #operations }
+CopyCommand >> undo [
+
+	"no op"
 ]

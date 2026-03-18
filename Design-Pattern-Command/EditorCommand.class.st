@@ -17,18 +17,18 @@ EditorCommand class >> document: aDocument os: anOS [
 { #category : #accessing }
 EditorCommand >> document: aDocument os: anOS [
 
-	document := aDocument .
+	document := aDocument.
 	os := anOS.
 	^ self
 ]
 
-{ #category : #execution }
+{ #category : #operations }
 EditorCommand >> execute [
 
 	^ self subclassResponsibility 
 ]
 
-{ #category : #'menu messages' }
+{ #category : #operations }
 EditorCommand >> undo [
 
 	^ self subclassResponsibility 

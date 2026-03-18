@@ -1,11 +1,21 @@
 Class {
 	#name : #PasteCommand,
 	#superclass : #EditorCommand,
+	#instVars : [
+		'lastDocumentContents'
+	],
 	#category : #'Design-Pattern-Command'
 }
 
-{ #category : #execution }
+{ #category : #operations }
 PasteCommand >> execute [
 
-	document contents: document contents, os clipboard
+	lastDocumentContents := document contents.
+	document contents: lastDocumentContents, os clipboard
+]
+
+{ #category : #operations }
+PasteCommand >> undo [
+
+	document contents: lastDocumentContents 
 ]

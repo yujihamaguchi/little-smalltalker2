@@ -12,16 +12,13 @@ Class {
 Editor >> addCommand: aCommand name: aSymbol [
 
 	commandDictionary at: aSymbol put: aCommand
-
-	
 ]
 
 { #category : #initialization }
 Editor >> initialize [
 
 	super initialize.
-	commandDictionary := Dictionary new.
-	^ self
+	commandDictionary := Dictionary new
 ]
 
 { #category : #processing }
@@ -33,8 +30,8 @@ Editor >> pushButton: aSymbol [
 	lastCommand := command
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #processing }
 Editor >> pushUndoButton [
 
-	lastCommand undo
+	lastCommand ifNotNil: [ lastCommand undo ]
 ]
