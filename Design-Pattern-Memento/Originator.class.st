@@ -16,7 +16,7 @@ Originator >> memento [
 { #category : #operations }
 Originator >> restoreTo: aMemento [
 
-	aMemento restoreOriginator: self
+	self updateState: aMemento state
 ]
 
 { #category : #accessing }

@@ -13,10 +13,10 @@ Memento class >> originator: anOriginator [
 	^ self new state: anOriginator state
 ]
 
-{ #category : #operations }
-Memento >> restoreOriginator: anOriginator [
+{ #category : #accessing }
+Memento >> state [
 
-	anOriginator updateState: state
+	^ state
 ]
 
 { #category : #'accessing - private' }
