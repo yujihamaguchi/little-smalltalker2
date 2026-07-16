@@ -13,5 +13,5 @@ Class {
 ManifestDesignPatternState class >> ruleCodeCruftLeftInMethodsRuleV1FalsePositive [
 
 	<ignoreForCoverage>
-	^ #(#(#(#RGMethodDefinition #(#GumballMachine #turnCrank #false)) #'2026-07-14T12:22:25.848223+09:00') )
+	^ #(#(#(#RGMethodDefinition #(#GumballMachine #turnCrank #false)) #'2026-07-14T12:22:25.848223+09:00') #(#(#RGPackageDefinition #(#'Design-Pattern-State')) #'2026-07-16T11:53:52.227288+09:00') )
 ]

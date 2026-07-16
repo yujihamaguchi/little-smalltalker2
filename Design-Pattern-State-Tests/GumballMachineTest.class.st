@@ -99,9 +99,7 @@ self assert: machine state class equals: NoCoin.
 { #category : 'tests' }
 GumballMachineTest >> testTurnCrankOnLastStok [
 "Arrange"
-9 timesRepeat: [ 
-	machine insertCoin.
-	machine turnCrank ].
+machine stock: 1.
 machine insertCoin.
 
 "Act"
@@ -109,4 +107,18 @@ machine turnCrank.
 
 "Assert"
 self assert: machine state class equals: SoldOut
+]
+
+{ #category : 'tests' }
+GumballMachineTest >> testTurnCrankWhenSoldOut [
+"Arrange"
+Transcript stub.
+machine stock: 0.
+self assert: machine state class equals: NoCoin.
+
+"Act"
+machine turnCrank.
+
+"Assert"
+Transcript should receive show: 'It is sold out, sorry.'
 ]

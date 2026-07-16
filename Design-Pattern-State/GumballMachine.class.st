@@ -18,20 +18,20 @@ GumballMachine >> decreaseStock [
 { #category : 'as yet unclassified' }
 GumballMachine >> ejectCoin [
 
-	state := NoCoin new.
+	state ejectCoin: self
 ]
 
 { #category : 'initialization' }
 GumballMachine >> initialize [ 
 
-	state := NoCoin new.
-	stock := 10
+	self state: NoCoin new.
+	self stock: 10
 ]
 
 { #category : 'as yet unclassified' }
 GumballMachine >> insertCoin [
 
-	state := HasCoin new
+	state insertCoin: self
 ]
 
 { #category : 'accessing' }
@@ -40,19 +40,25 @@ GumballMachine >> state [
 	^ state
 ]
 
+{ #category : 'accessing' }
+GumballMachine >> state: aState [
+
+	state := aState
+]
+
 { #category : 'as yet unclassified' }
 GumballMachine >> stock [
 
 	^ stock
 ]
 
+{ #category : 'accessing' }
+GumballMachine >> stock: aNumber [
+
+	stock := aNumber
+]
+
 { #category : 'as yet unclassified' }
 GumballMachine >> turnCrank [
-self state class == HasCoin
-	ifTrue: [
-			Transcript show: 'A gamball come out!'.
-			self decreaseStock.
-			state := stock isZero ifTrue: [ SoldOut new ] ifFalse: [NoCoin new ] ]
-	ifFalse: [
-	Transcript show: 'Please insert coin before turning crank.' ]
+	state turnCrank: self
 ]
