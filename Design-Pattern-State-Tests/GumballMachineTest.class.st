@@ -99,7 +99,8 @@ self assert: machine state class equals: NoCoin.
 { #category : 'tests' }
 GumballMachineTest >> testTurnCrankOnLastStok [
 "Arrange"
-machine stock: 1.
+9 timesRepeat: [ 
+	machine insertCoin; turnCrank ].
 machine insertCoin.
 
 "Act"
@@ -113,8 +114,8 @@ self assert: machine state class equals: SoldOut
 GumballMachineTest >> testTurnCrankWhenSoldOut [
 "Arrange"
 Transcript stub.
-machine stock: 0.
-self assert: machine state class equals: NoCoin.
+10 timesRepeat: [ 
+	machine insertCoin; turnCrank ].
 
 "Act"
 machine turnCrank.

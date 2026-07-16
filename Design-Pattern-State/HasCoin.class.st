@@ -23,5 +23,5 @@ HasCoin >> insertCoin: aMachine [
 HasCoin >> turnCrank: aMachine [
 	Transcript show: 'A gamball come out!'.
 	aMachine decreaseStock.
-	aMachine state: (aMachine stock isZero ifTrue: [ SoldOut new ] ifFalse: [NoCoin new ])
+	aMachine state: (aMachine stock = 0 ifTrue: [ SoldOut new ] ifFalse: [ NoCoin new ])
 ]

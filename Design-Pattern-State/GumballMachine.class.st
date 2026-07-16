@@ -25,7 +25,7 @@ GumballMachine >> ejectCoin [
 GumballMachine >> initialize [ 
 
 	self state: NoCoin new.
-	self stock: 10
+	stock := 10
 ]
 
 { #category : 'as yet unclassified' }
@@ -50,12 +50,6 @@ GumballMachine >> state: aState [
 GumballMachine >> stock [
 
 	^ stock
-]
-
-{ #category : 'accessing' }
-GumballMachine >> stock: aNumber [
-
-	stock := aNumber
 ]
 
 { #category : 'as yet unclassified' }
