@@ -11,7 +11,7 @@ Class {
 { #category : 'running' }
 GumballMachineTest >> setUp [
 
-	machine := GumballMachine new
+	machine := GumballMachine output: Mock new.
 ]
 
 { #category : 'tests' }
@@ -67,14 +67,11 @@ self assert: machine state class equals: HasCoin.
 
 { #category : 'tests' }
 GumballMachineTest >> testTrunCrankWithNoCoin [
-"Arrange"
-Transcript stub.
-
 "Act"
 machine turnCrank.
 
 "Assert"
-Transcript should receive show: 'Please insert coin before turning crank.'.
+machine output should receive show: 'Please insert coin before turning crank.'.
 self assert: machine stock equals: 10.
 self assert: machine state class equals: NoCoin.
 
@@ -83,7 +80,6 @@ self assert: machine state class equals: NoCoin.
 { #category : 'tests' }
 GumballMachineTest >> testTurnCrank [
 "Arrange"
-Transcript stub.
 self assert: machine stock equals: 10.
 machine insertCoin.
 
@@ -91,7 +87,7 @@ machine insertCoin.
 machine turnCrank.
 
 "Assert"
-Transcript should receive show: 'A gamball come out!'.
+machine output should receive show: 'A gamball come out!'.
 self assert: machine stock equals: 9.
 self assert: machine state class equals: NoCoin.
 ]
@@ -113,7 +109,6 @@ self assert: machine state class equals: SoldOut
 { #category : 'tests' }
 GumballMachineTest >> testTurnCrankWhenSoldOut [
 "Arrange"
-Transcript stub.
 10 timesRepeat: [ 
 	machine insertCoin; turnCrank ].
 
@@ -121,5 +116,5 @@ Transcript stub.
 machine turnCrank.
 
 "Assert"
-Transcript should receive show: 'It is sold out, sorry.'
+machine output should receive show: 'It is sold out, sorry.'
 ]

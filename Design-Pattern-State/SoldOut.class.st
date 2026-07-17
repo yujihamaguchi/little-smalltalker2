@@ -7,7 +7,7 @@ Class {
 	#package : 'Design-Pattern-State'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 SoldOut >> ejectCoin: aMachine [
 
 	aMachine state: NoCoin new
@@ -15,14 +15,14 @@ SoldOut >> ejectCoin: aMachine [
 	
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 SoldOut >> insertCoin: aMachine [
 
 	aMachine state: HasCoin new
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 SoldOut >> turnCrank: aMachine [
 
-	Transcript show: 'It is sold out, sorry.'
+	aMachine output show: 'It is sold out, sorry.'
 ]

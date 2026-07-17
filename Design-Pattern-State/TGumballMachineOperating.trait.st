@@ -4,7 +4,7 @@ Trait {
 	#package : 'Design-Pattern-State'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 TGumballMachineOperating >> ejectCoin: aMachine [
 
 	^ self explicitRequirement 
@@ -12,13 +12,13 @@ TGumballMachineOperating >> ejectCoin: aMachine [
 	
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 TGumballMachineOperating >> insertCoin: aMachine [
 
 	^ self explicitRequirement 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 TGumballMachineOperating >> turnCrank: aMachine [
 
 	^ self explicitRequirement 

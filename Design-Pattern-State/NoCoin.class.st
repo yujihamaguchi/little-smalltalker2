@@ -7,20 +7,20 @@ Class {
 	#package : 'Design-Pattern-State'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 NoCoin >> ejectCoin: aMachine [
 
 	
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 NoCoin >> insertCoin: aMachine [
 
 	aMachine state: HasCoin new
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 NoCoin >> turnCrank: aMachine [
 
-	Transcript show: 'Please insert coin before turning crank.'
+	aMachine output show: 'Please insert coin before turning crank.'
 ]

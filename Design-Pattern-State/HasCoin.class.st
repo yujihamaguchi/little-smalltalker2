@@ -7,7 +7,7 @@ Class {
 	#package : 'Design-Pattern-State'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 HasCoin >> ejectCoin: aMachine [
 
 	aMachine state: NoCoin new
@@ -15,13 +15,13 @@ HasCoin >> ejectCoin: aMachine [
 	
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 HasCoin >> insertCoin: aMachine [
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 HasCoin >> turnCrank: aMachine [
-	Transcript show: 'A gamball come out!'.
+	aMachine output show: 'A gamball come out!'.
 	aMachine decreaseStock.
 	aMachine state: (aMachine stock = 0 ifTrue: [ SoldOut new ] ifFalse: [ NoCoin new ])
 ]
