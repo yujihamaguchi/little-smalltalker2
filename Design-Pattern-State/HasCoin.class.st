@@ -1,8 +1,6 @@
 Class {
 	#name : 'HasCoin',
-	#superclass : 'Object',
-	#traits : 'TGumballMachineOperating',
-	#classTraits : 'TGumballMachineOperating classTrait',
+	#superclass : 'GumballMachineState',
 	#category : 'Design-Pattern-State',
 	#package : 'Design-Pattern-State'
 }
@@ -10,7 +8,7 @@ Class {
 { #category : 'operating' }
 HasCoin >> ejectCoin: aMachine [
 
-	aMachine state: NoCoin new
+	aMachine state: NoCoin singleton
 
 	
 ]
@@ -21,7 +19,9 @@ HasCoin >> insertCoin: aMachine [
 
 { #category : 'operating' }
 HasCoin >> turnCrank: aMachine [
+
 	aMachine output show: 'A gamball come out!'.
-	aMachine decreaseStock.
-	aMachine state: (aMachine stock = 0 ifTrue: [ SoldOut new ] ifFalse: [ NoCoin new ])
+	aMachine state: NoCoin singleton.
+	aMachine decreaseStock
+
 ]

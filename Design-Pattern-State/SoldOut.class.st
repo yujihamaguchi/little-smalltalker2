@@ -1,8 +1,6 @@
 Class {
 	#name : 'SoldOut',
-	#superclass : 'Object',
-	#traits : 'TGumballMachineOperating',
-	#classTraits : 'TGumballMachineOperating classTrait',
+	#superclass : 'GumballMachineState',
 	#category : 'Design-Pattern-State',
 	#package : 'Design-Pattern-State'
 }
@@ -10,7 +8,7 @@ Class {
 { #category : 'operating' }
 SoldOut >> ejectCoin: aMachine [
 
-	aMachine state: NoCoin new
+	"no op"
 
 	
 ]
@@ -18,7 +16,7 @@ SoldOut >> ejectCoin: aMachine [
 { #category : 'operating' }
 SoldOut >> insertCoin: aMachine [
 
-	aMachine state: HasCoin new
+	"no op"
 ]
 
 { #category : 'operating' }

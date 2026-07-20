@@ -19,7 +19,7 @@ GumballMachine class >> output: anOutput [
 { #category : 'operating' }
 GumballMachine >> decreaseStock [
 
-	stock := stock - 1
+	self stock: ((stock - 1) max: 0)
 ]
 
 { #category : 'operating' }
@@ -31,7 +31,7 @@ GumballMachine >> ejectCoin [
 { #category : 'initialization' }
 GumballMachine >> initialize [ 
 
-	self state: NoCoin new.
+	self state: NoCoin singleton.
 	stock := 10
 ]
 
@@ -70,6 +70,13 @@ GumballMachine >> state: aState [
 GumballMachine >> stock [
 
 	^ stock
+]
+
+{ #category : 'accessing' }
+GumballMachine >> stock: aNumber [
+
+	stock := aNumber.
+	stock = 0 ifTrue: [ self state: SoldOut singleton ].
 ]
 
 { #category : 'operating' }

@@ -1,8 +1,6 @@
 Class {
 	#name : 'NoCoin',
-	#superclass : 'Object',
-	#traits : 'TGumballMachineOperating',
-	#classTraits : 'TGumballMachineOperating classTrait',
+	#superclass : 'GumballMachineState',
 	#category : 'Design-Pattern-State',
 	#package : 'Design-Pattern-State'
 }
@@ -16,7 +14,7 @@ NoCoin >> ejectCoin: aMachine [
 { #category : 'operating' }
 NoCoin >> insertCoin: aMachine [
 
-	aMachine state: HasCoin new
+	aMachine state: HasCoin singleton
 ]
 
 { #category : 'operating' }
