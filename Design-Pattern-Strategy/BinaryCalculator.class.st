@@ -8,13 +8,13 @@ Class {
 	#package : 'Design-Pattern-Strategy'
 }
 
-{ #category : 'accessing' }
+{ #category : 'instance creation' }
 BinaryCalculator class >> strategy: anStrategy [
 
 	^ self new strategy: anStrategy; yourself
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 BinaryCalculator >> calculate: aNumber and: anotherNumber [
 
 	^ strategy calculate: aNumber and: anotherNumber 

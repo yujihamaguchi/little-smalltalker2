@@ -7,7 +7,7 @@ Class {
 	#package : 'Design-Pattern-Strategy'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 AddStrategy >> calculate: aNumber and: anotherNumber [
 
 	^ aNumber + anotherNumber 

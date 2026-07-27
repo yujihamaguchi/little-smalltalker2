@@ -1,12 +1,12 @@
 Class {
-	#name : 'CalculatorTest',
+	#name : 'BinaryCalculatorTest',
 	#superclass : 'TestCase',
 	#category : 'Design-Pattern-Strategy-Tests',
 	#package : 'Design-Pattern-Strategy-Tests'
 }
 
 { #category : 'tests' }
-CalculatorTest >> testAdd [
+BinaryCalculatorTest >> testAdd [
 	| calculator result |
 	"Arrange"
 	calculator := BinaryCalculator strategy: AddStrategy new.
@@ -19,7 +19,31 @@ CalculatorTest >> testAdd [
 ]
 
 { #category : 'tests' }
-CalculatorTest >> testMultiply [
+BinaryCalculatorTest >> testAddThenMultiply [
+	| calculator n m result |
+	"Arrange"
+	calculator := BinaryCalculator strategy: AddStrategy new.
+	n := 2.
+	m := 3.
+
+	"Act 1"
+	result := calculator calculate: n and: m.
+
+	"Assert 1"
+	self assert: result equals: 5.
+
+	"Arrange 2"
+	calculator strategy: MultiplyStrategy new.
+
+	"Act 2"
+	result := calculator calculate: n and: m.
+
+	"Assert 2"
+	self assert: result equals: 6.
+]
+
+{ #category : 'tests' }
+BinaryCalculatorTest >> testMultiply [
 	| calculator result |
 	"Arrange"
 	calculator := BinaryCalculator strategy: MultiplyStrategy new.
@@ -32,7 +56,7 @@ CalculatorTest >> testMultiply [
 ]
 
 { #category : 'tests' }
-CalculatorTest >> testSubtract [
+BinaryCalculatorTest >> testSubtract [
 	| calculator result |
 	"Arrange"
 	calculator := BinaryCalculator strategy: SubtractStrategy new.

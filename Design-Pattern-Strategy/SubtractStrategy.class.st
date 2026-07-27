@@ -7,7 +7,7 @@ Class {
 	#package : 'Design-Pattern-Strategy'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 SubtractStrategy >> calculate: aNumber and: anotherNumber [
 
 	^ aNumber - anotherNumber 

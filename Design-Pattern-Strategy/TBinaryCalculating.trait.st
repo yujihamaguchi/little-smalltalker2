@@ -4,7 +4,7 @@ Trait {
 	#package : 'Design-Pattern-Strategy'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'operating' }
 TBinaryCalculating >> calculate: aNumber and: anotherNumber [
 
 	^ self explicitRequirement 
