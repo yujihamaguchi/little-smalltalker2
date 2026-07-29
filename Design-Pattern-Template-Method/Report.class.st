@@ -22,6 +22,6 @@ Report >> format: aData [
 { #category : 'translating' }
 Report >> generate [
 
-	self format: self fetch
+	^ self format: self fetch
 	
 ]
