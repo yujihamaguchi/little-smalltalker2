@@ -7,10 +7,16 @@ Class {
 
 { #category : 'fetching' }
 Report >> fetch [
+
+	^ { 'foo' . 'bar' . 'baz' }
 ]
 
 { #category : 'fetching' }
-Report >> format: aString [
+Report >> format: aData [
+
+	^ aData fold: [ :acc :each | acc, ',', each ]
+
+	
 ]
 
 { #category : 'translating' }

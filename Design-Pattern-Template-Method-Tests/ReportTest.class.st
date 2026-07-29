@@ -6,15 +6,30 @@ Class {
 }
 
 { #category : 'tests' }
+ReportTest >> testFetch [
+	| report result |
+	"Arrange"
+	report := Report new.
+
+	"Act"
+	result := report fetch.
+
+	"Assert"
+	self assert: result equals: { 'foo'. 'bar'. 'baz' } 
+]
+
+{ #category : 'tests' }
 ReportTest >> testGenerate [
-	| report |
+	| report result |
 	"Arrange"
 	report := Report new.
 	report stub fetch willReturn: #fetched.
-
+	(report stub format: #fetched) willReturn: #formatted.
+	
 	"Act"
-	report generate.
+	result := report generate.
 
 	"Assert"
 	report should receive format: #fetched.
+	self assert: result equals: #formatted.
 ]
