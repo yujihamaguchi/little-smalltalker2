@@ -11,15 +11,15 @@ Report >> fetch [
 	^ { 'foo' . 'bar' . 'baz' }
 ]
 
-{ #category : 'fetching' }
+{ #category : 'formatting' }
 Report >> format: aData [
 
-	^ aData fold: [ :acc :each | acc, ',', each ]
+	^ self subclassResponsibility 
 
 	
 ]
 
-{ #category : 'translating' }
+{ #category : 'operating' }
 Report >> generate [
 
 	^ self format: self fetch
