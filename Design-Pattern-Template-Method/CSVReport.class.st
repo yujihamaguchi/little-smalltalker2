@@ -6,7 +6,7 @@ Class {
 }
 
 { #category : 'formatting' }
-CSVReport >> format: aData [
+CSVReport >> render: aData [
 
 	^ aData fold: [ :acc :each | acc, ',', each ]
 

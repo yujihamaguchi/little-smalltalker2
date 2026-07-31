@@ -6,7 +6,7 @@ Class {
 }
 
 { #category : 'formatting' }
-HTMLReport >> format: aData [
+HTMLReport >> render: aData [
 	| list |
 	list := aData inject: '' into: [ :acc :each | acc, '<li>', each, '</li>' ].
 	^ '<ul>', list, '</ul>'

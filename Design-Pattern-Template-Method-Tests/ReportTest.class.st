@@ -24,12 +24,12 @@ ReportTest >> testGenerate [
 	"Arrange"
 	report := Report new.
 	report stub fetch willReturn: #fetched.
-	(report stub format: #fetched) willReturn: #formatted.
+	(report stub render: #fetched) willReturn: #formatted.
 	
 	"Act"
 	result := report generate.
 
 	"Assert"
-	report should receive format: #fetched.
+	report should receive render: #fetched.
 	self assert: result equals: #formatted.
 ]

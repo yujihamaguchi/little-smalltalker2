@@ -11,17 +11,17 @@ Report >> fetch [
 	^ { 'foo' . 'bar' . 'baz' }
 ]
 
-{ #category : 'formatting' }
-Report >> format: aData [
-
-	^ self subclassResponsibility 
-
-	
-]
-
 { #category : 'operating' }
 Report >> generate [
 
-	^ self format: self fetch
+	^ self render: self fetch
+	
+]
+
+{ #category : 'formatting' }
+Report >> render: aData [
+
+	^ self subclassResponsibility 
+
 	
 ]
