@@ -9,6 +9,6 @@ Class {
 HTMLReport >> format: aData [
 	| list |
 	list := aData inject: '' into: [ :acc :each | acc, '<li>', each, '</li>' ].
-	^ '<html><ol>', list, '</ol></html>'
+	^ '<ul>', list, '</ul>'
 	
 ]

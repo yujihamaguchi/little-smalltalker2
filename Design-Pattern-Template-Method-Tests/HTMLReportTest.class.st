@@ -15,5 +15,5 @@ HTMLReportTest >> testGenerate [
 	result := report generate.
 	
 	"Arrange"
-	self assert: result equals: '<html><ol><li>foo</li><li>bar</li><li>baz</li></ol></html>'
+	self assert: result equals: '<ul><li>foo</li><li>bar</li><li>baz</li></ul>'
 ]
