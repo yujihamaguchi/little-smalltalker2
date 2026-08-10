@@ -17,7 +17,7 @@ ShapeTest >> testCircleAcceptAreaCalculator [
 	result := circle accept: calculator.
 	
 	"Assert"
-	self assert: result equals: 3 * Float pi.
+	self assert: result equals: 3 squared * Float pi.
 ]
 
 { #category : 'tests' }
@@ -48,6 +48,21 @@ ShapeTest >> testCircleAcceptXMLExporter [
 	
 	"Assert"
 	self assert: result equals: 'XMLed Circle(x: 3, y: 4, r: 5)'
+]
+
+{ #category : 'tests' }
+ShapeTest >> testDotAcceptAreaCalculator [
+
+	| dot calculator result |
+	"Arrange"
+	dot := Dot x: 1 y: 2.
+	calculator := AreaCalculator new.
+	
+	"Act"
+	result := dot accept: calculator.
+	
+	"Assert"
+	self assert: result isZero 
 ]
 
 { #category : 'tests' }

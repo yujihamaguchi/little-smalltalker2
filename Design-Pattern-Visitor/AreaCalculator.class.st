@@ -10,7 +10,7 @@ Class {
 { #category : 'visiting' }
 AreaCalculator >> visitCircle: aCircle [
 
-	^ aCircle r * Float pi
+	^ aCircle r squared * Float pi
 ]
 
 { #category : 'visiting' }
