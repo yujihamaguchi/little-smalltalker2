@@ -6,6 +6,21 @@ Class {
 }
 
 { #category : 'tests' }
+ShapeTest >> testCircleAcceptAreaCalculator [
+
+	| circle calculator result  |
+	"Arrange"
+	circle := Circle x: 1 y: 2 r: 3.
+	calculator := AreaCalculator new.
+	
+	"Act"
+	result := circle accept: calculator.
+	
+	"Assert"
+	self assert: result equals: 3 * Float pi.
+]
+
+{ #category : 'tests' }
 ShapeTest >> testCircleAcceptJSONExporter [
 
 	| circle exporter result |
