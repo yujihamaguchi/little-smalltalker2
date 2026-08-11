@@ -1,1 +1,1 @@
-Package { #name : #'Design-Pattern-Adapter' }
+Package { #name : 'Design-Pattern-Adapter' }

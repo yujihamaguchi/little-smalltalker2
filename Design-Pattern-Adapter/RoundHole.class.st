@@ -1,33 +1,34 @@
 Class {
-	#name : #RoundHole,
-	#superclass : #Object,
+	#name : 'RoundHole',
+	#superclass : 'Object',
 	#traits : 'TRadius',
 	#classTraits : 'TRadius classTrait',
 	#instVars : [
 		'radius'
 	],
-	#category : #'Design-Pattern-Adapter-Design-Pattern-Adapter'
+	#category : 'Design-Pattern-Adapter',
+	#package : 'Design-Pattern-Adapter'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 RoundHole class >> radius: aNumber [
 
-	^ self new radius: aNumber
+	^ self new radius: aNumber; yourself 
 ]
 
-{ #category : #testing }
-RoundHole >> fits: anObject [
+{ #category : 'operating' }
+RoundHole >> fits: another [
 
-	^ self radius >= anObject radius
+	^ self radius >= another radius
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 RoundHole >> radius [
 
 	^ radius
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 RoundHole >> radius: aNumber [
 
 	radius := aNumber

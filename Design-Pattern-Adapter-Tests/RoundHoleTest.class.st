@@ -1,10 +1,11 @@
 Class {
-	#name : #RoundHoleTest,
-	#superclass : #TestCase,
-	#category : #'Design-Pattern-Adapter-Tests'
+	#name : 'RoundHoleTest',
+	#superclass : 'TestCase',
+	#category : 'Design-Pattern-Adapter-Tests',
+	#package : 'Design-Pattern-Adapter-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 RoundHoleTest >> testFitsRoundPeg [
 
 	| roundHole roundPeg |
@@ -16,7 +17,7 @@ RoundHoleTest >> testFitsRoundPeg [
 	self assert: (roundHole fits: roundPeg)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 RoundHoleTest >> testFitsRoundPegExactly [
 
 	| roundHole roundPeg |
@@ -28,35 +29,34 @@ RoundHoleTest >> testFitsRoundPegExactly [
 	self assert: (roundHole fits: roundPeg)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 RoundHoleTest >> testFitsSquarePeg [
 
-	| roundHole squarePeg squarePegToRoundHoleAdapter |
+	| roundHole squarePeg squarePegAdapter |
 	"Arrange"
 	roundHole := RoundHole radius: 5.
 	squarePeg := SquarePeg width: 4 * 2 sqrt.
-	squarePegToRoundHoleAdapter := SquarePegToRoundHoleAdapter
-		                               squarePeg: squarePeg.
+	squarePegAdapter := SquarePegAdapter squarePeg: squarePeg.
 
 	"Act & Assert"
-	self assert: (roundHole fits: squarePegToRoundHoleAdapter)
+	self assert: (roundHole fits: squarePegAdapter)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 RoundHoleTest >> testFitsSquarePegExactly [
 
 	| roundHole squarePeg squarePegToRoundHoleAdapter |
 	"Arrange"
 	roundHole := RoundHole radius: 5.
 	squarePeg := SquarePeg width: 5 * 2 sqrt.
-	squarePegToRoundHoleAdapter := SquarePegToRoundHoleAdapter
+	squarePegToRoundHoleAdapter := SquarePegAdapter
 		                               squarePeg: squarePeg.
 
 	"Act & Assert"
 	self assert: (roundHole fits: squarePegToRoundHoleAdapter)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 RoundHoleTest >> testNotFitsRoundPeg [
 
 	| roundHole roundPeg |
@@ -68,14 +68,14 @@ RoundHoleTest >> testNotFitsRoundPeg [
 	self deny: (roundHole fits: roundPeg)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 RoundHoleTest >> testNotFitsSquarePeg [
 
 	| roundHole squarePeg squarePegToRoundHoleAdapter |
 	"Arrange"
 	roundHole := RoundHole radius: 5.
 	squarePeg := SquarePeg width: 6 * 2 sqrt.
-	squarePegToRoundHoleAdapter := SquarePegToRoundHoleAdapter
+	squarePegToRoundHoleAdapter := SquarePegAdapter
 		                               squarePeg: squarePeg.
 
 	"Act & Assert"

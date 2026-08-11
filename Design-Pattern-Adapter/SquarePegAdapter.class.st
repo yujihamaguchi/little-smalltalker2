@@ -1,29 +1,29 @@
 Class {
-	#name : 'RoundPeg',
+	#name : 'SquarePegAdapter',
 	#superclass : 'Object',
 	#traits : 'TRadius',
 	#classTraits : 'TRadius classTrait',
 	#instVars : [
-		'radius'
+		'squarePeg'
 	],
 	#category : 'Design-Pattern-Adapter',
 	#package : 'Design-Pattern-Adapter'
 }
 
 { #category : 'instance creation' }
-RoundPeg class >> radius: aNumber [
+SquarePegAdapter class >> squarePeg: aSquarePeg [
 
-	^ self new radius: aNumber; yourself 
+	^ self new squarePeg: aSquarePeg; yourself
 ]
 
 { #category : 'accessing' }
-RoundPeg >> radius [
+SquarePegAdapter >> radius [
 
-	^ radius
+	^ squarePeg width / 2 sqrt 
 ]
 
 { #category : 'accessing' }
-RoundPeg >> radius: aNumber [
+SquarePegAdapter >> squarePeg: aSquarePeg [
 
-	radius := aNumber 
+	squarePeg := aSquarePeg
 ]
