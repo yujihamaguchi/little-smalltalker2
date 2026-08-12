@@ -8,8 +8,8 @@ Class {
 		'voltage',
 		'isNailed'
 	],
-	#category : 'Refactoring-Replace-Conditional-With-Polymorphism',
-	#package : 'Refactoring-Replace-Conditional-With-Polymorphism'
+	#category : 'Refactor-Replace-Conditional-With-Polymorphism',
+	#package : 'Refactor-Replace-Conditional-With-Polymorphism'
 }
 
 { #category : 'instance creation' }

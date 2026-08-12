@@ -1,8 +1,8 @@
 Class {
 	#name : 'BirdTest',
 	#superclass : 'TestCase',
-	#category : 'Refactoring-Replace-Conditional-With-Polymorphism-Tests',
-	#package : 'Refactoring-Replace-Conditional-With-Polymorphism-Tests'
+	#category : 'Refactor-Replace-Conditional-With-Polymorphism-Tests',
+	#package : 'Refactor-Replace-Conditional-With-Polymorphism-Tests'
 }
 
 { #category : 'tests' }
