@@ -10,7 +10,7 @@ PlanTest >> testSummerChargeHasNoServiceCharge [
 
 	| plan result |
 	"Arrange"
-	plan := Plan new summerStart: 6; summerEnd: 8; summerRate: 10; winterRate: 20; winterServiceCharge: 5; yourself.
+	plan := Plan summerStart: 6 end: 8 summerRate: 10 winterRate: 20 winterServiceCharge: 5.
 	"Act"
 	result := plan chargeForDay: 7 quantity: 2.
 	"Assert"
@@ -22,7 +22,7 @@ PlanTest >> testWinterChargeIncludesServiceCharge [
 
 	| plan result |
 	"Arrange"
-	plan := Plan new summerStart: 6; summerEnd: 8; summerRate: 10; winterRate: 20; winterServiceCharge: 5; yourself.
+	plan := Plan summerStart: 6 end: 8 summerRate: 10 winterRate: 20 winterServiceCharge: 5.
 	"Act"
 	result := plan chargeForDay: 3 quantity: 2.
 	"Assert"

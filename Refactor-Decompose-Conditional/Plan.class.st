@@ -12,6 +12,13 @@ Class {
 	#package : 'Refactor-Decompose-Conditional'
 }
 
+{ #category : 'instance creation' }
+Plan class >> summerStart: aStart end: anEnd summerRate: aSummerRate winterRate: aWinterRate winterServiceCharge: aCharge [
+
+	^ self new
+		setSummerStart: aStart end: anEnd summerRate: aSummerRate winterRate: aWinterRate winterServiceCharge: aCharge
+]
+
 { #category : 'operating' }
 Plan >> chargeForDay: aDay quantity: aQuantity [
 
@@ -20,32 +27,12 @@ Plan >> chargeForDay: aDay quantity: aQuantity [
 		ifFalse: [ aQuantity * summerRate ]
 ]
 
-{ #category : 'accessing' }
-Plan >> summerEnd: aDay [
+{ #category : 'private' }
+Plan >> setSummerStart: aStart end: anEnd summerRate: aSummerRate winterRate: aWinterRate winterServiceCharge: aCharge [
 
-	summerEnd := aDay
-]
-
-{ #category : 'accessing' }
-Plan >> summerRate: aRate [
-
-	summerRate := aRate
-]
-
-{ #category : 'accessing' }
-Plan >> summerStart: aDay [
-
-	summerStart := aDay
-]
-
-{ #category : 'accessing' }
-Plan >> winterRate: aRate [
-
-	winterRate := aRate
-]
-
-{ #category : 'accessing' }
-Plan >> winterServiceCharge: aCharge [
-
+	summerStart := aStart.
+	summerEnd := anEnd.
+	summerRate := aSummerRate.
+	winterRate := aWinterRate.
 	winterServiceCharge := aCharge
 ]
