@@ -11,7 +11,7 @@ Class {
 { #category : 'instance creation' }
 AccountType class >> premium: aBoolean [
 
-	^ self new premium: aBoolean; yourself
+	^ self new setPremium: aBoolean
 ]
 
 { #category : 'accessing' }
@@ -20,8 +20,8 @@ AccountType >> isPremium [
 	^ premium
 ]
 
-{ #category : 'accessing' }
-AccountType >> premium: aBoolean [
+{ #category : 'private' }
+AccountType >> setPremium: aBoolean [
 
 	premium := aBoolean
 ]

@@ -13,13 +13,7 @@ Class {
 { #category : 'instance creation' }
 Employee class >> dead: aDead separated: aSeparated retired: aRetired [
 
-	^ self new dead: aDead; separated: aSeparated; retired: aRetired; yourself
-]
-
-{ #category : 'accessing' }
-Employee >> dead: aBoolean [
-
-	dead := aBoolean
+	^ self new setDead: aDead separated: aSeparated retired: aRetired
 ]
 
 { #category : 'operating' }
@@ -48,26 +42,22 @@ Employee >> payAmount [
 	^ result
 ]
 
-{ #category : 'accessing' }
-Employee >> retired: aBoolean [
-
-	retired := aBoolean
-]
-
 { #category : 'operating' }
 Employee >> retiredAmount [
 
 	^ 3
 ]
 
-{ #category : 'accessing' }
-Employee >> separated: aBoolean [
-
-	separated := aBoolean
-]
-
 { #category : 'operating' }
 Employee >> separatedAmount [
 
 	^ 2
+]
+
+{ #category : 'private' }
+Employee >> setDead: aDead separated: aSeparated retired: aRetired [
+
+	dead := aDead.
+	separated := aSeparated.
+	retired := aRetired
 ]

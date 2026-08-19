@@ -12,7 +12,7 @@ Class {
 { #category : 'instance creation' }
 PricedOrder class >> quantity: aQuantity itemPrice: aPrice [
 
-	^ self new quantity: aQuantity; itemPrice: aPrice; yourself
+	^ self new setQuantity: aQuantity itemPrice: aPrice
 ]
 
 { #category : 'operating' }
@@ -24,14 +24,9 @@ PricedOrder >> getPrice [
 	^ basePrice * discountFactor / 100
 ]
 
-{ #category : 'accessing' }
-PricedOrder >> itemPrice: aPrice [
+{ #category : 'private' }
+PricedOrder >> setQuantity: aQuantity itemPrice: aPrice [
 
+	quantity := aQuantity.
 	itemPrice := aPrice
-]
-
-{ #category : 'accessing' }
-PricedOrder >> quantity: aQuantity [
-
-	quantity := aQuantity
 ]

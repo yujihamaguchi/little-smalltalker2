@@ -12,13 +12,7 @@ Class {
 { #category : 'instance creation' }
 Order class >> quantity: aQuantity itemPrice: aPrice [
 
-	^ self new quantity: aQuantity; itemPrice: aPrice; yourself
-]
-
-{ #category : 'accessing' }
-Order >> itemPrice: aPrice [
-
-	itemPrice := aPrice
+	^ self new setQuantity: aQuantity itemPrice: aPrice
 ]
 
 { #category : 'operating' }
@@ -27,8 +21,9 @@ Order >> price [
 	^ (quantity * itemPrice) - ((0 max: quantity - 500) * itemPrice * 5 / 100) + ((quantity * itemPrice / 10) min: 100)
 ]
 
-{ #category : 'accessing' }
-Order >> quantity: aQuantity [
+{ #category : 'private' }
+Order >> setQuantity: aQuantity itemPrice: aPrice [
 
-	quantity := aQuantity
+	quantity := aQuantity.
+	itemPrice := aPrice
 ]

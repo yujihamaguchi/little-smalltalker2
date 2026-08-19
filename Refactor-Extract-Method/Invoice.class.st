@@ -12,19 +12,14 @@ Class {
 { #category : 'instance creation' }
 Invoice class >> customer: aName amount: anAmount [
 
-	^ self new customer: aName; amount: anAmount; yourself
+	^ self new setCustomer: aName amount: anAmount
 ]
 
-{ #category : 'accessing' }
-Invoice >> amount: anAmount [
+{ #category : 'private' }
+Invoice >> setCustomer: aName amount: anAmount [
 
+	customer := aName.
 	amount := anAmount
-]
-
-{ #category : 'accessing' }
-Invoice >> customer: aName [
-
-	customer := aName
 ]
 
 { #category : 'operating' }

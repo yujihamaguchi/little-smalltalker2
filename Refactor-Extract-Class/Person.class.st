@@ -13,7 +13,7 @@ Class {
 { #category : 'instance creation' }
 Person class >> name: aName areaCode: aCode number: aNumber [
 
-	^ self new name: aName; officeAreaCode: aCode; officeNumber: aNumber; yourself
+	^ self new setName: aName areaCode: aCode number: aNumber
 ]
 
 { #category : 'accessing' }
@@ -22,21 +22,11 @@ Person >> name [
 	^ name
 ]
 
-{ #category : 'accessing' }
-Person >> name: aName [
+{ #category : 'private' }
+Person >> setName: aName areaCode: aCode number: aNumber [
 
-	name := aName
-]
-
-{ #category : 'accessing' }
-Person >> officeAreaCode: aCode [
-
-	officeAreaCode := aCode
-]
-
-{ #category : 'accessing' }
-Person >> officeNumber: aNumber [
-
+	name := aName.
+	officeAreaCode := aCode.
 	officeNumber := aNumber
 ]
 

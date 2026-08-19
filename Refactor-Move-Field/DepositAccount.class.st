@@ -12,13 +12,7 @@ Class {
 { #category : 'instance creation' }
 DepositAccount class >> type: aType rate: aRate [
 
-	^ self new accountType: aType; interestRate: aRate; yourself
-]
-
-{ #category : 'accessing' }
-DepositAccount >> accountType: aType [
-
-	accountType := aType
+	^ self new setAccountType: aType interestRate: aRate
 ]
 
 { #category : 'operating' }
@@ -33,8 +27,9 @@ DepositAccount >> interestRate [
 	^ interestRate
 ]
 
-{ #category : 'accessing' }
-DepositAccount >> interestRate: aRate [
+{ #category : 'private' }
+DepositAccount >> setAccountType: aType interestRate: aRate [
 
+	accountType := aType.
 	interestRate := aRate
 ]
