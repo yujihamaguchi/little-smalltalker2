@@ -3,8 +3,8 @@ Class {
 	#superclass : 'Object',
 	#instVars : [
 		'name',
-		'officeAreaCode',
-		'officeNumber'
+		'areaCode',
+		'number'
 	],
 	#category : 'Refactor-Extract-Class',
 	#package : 'Refactor-Extract-Class'
@@ -26,12 +26,12 @@ Person >> name [
 Person >> setName: aName areaCode: aCode number: aNumber [
 
 	name := aName.
-	officeAreaCode := aCode.
-	officeNumber := aNumber
+	areaCode := aCode.
+	number := aNumber
 ]
 
 { #category : 'operating' }
 Person >> telephoneNumber [
 
-	^ '(', officeAreaCode, ') ', officeNumber
+	^ '(', areaCode, ') ', number
 ]
