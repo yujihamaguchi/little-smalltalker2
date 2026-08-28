@@ -11,8 +11,10 @@ InvoiceTest >> testStatement [
 	| invoice result |
 	"Arrange"
 	invoice := Invoice customer: 'Alice' amount: 100.
+
 	"Act"
 	result := invoice statement.
+
 	"Assert"
 	self assert: result equals: ('Customer: Alice', String cr, 'Amount: 100')
 ]
