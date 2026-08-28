@@ -11,8 +11,10 @@ DriverTest >> testRatingWhenFewLate [
 	| driver result |
 	"Arrange"
 	driver := Driver lateDeliveries: 3.
+
 	"Act"
 	result := driver rating.
+
 	"Assert"
 	self assert: result equals: 1
 ]
@@ -23,8 +25,10 @@ DriverTest >> testRatingWhenManyLate [
 	| driver result |
 	"Arrange"
 	driver := Driver lateDeliveries: 6.
+
 	"Act"
 	result := driver rating.
+
 	"Assert"
 	self assert: result equals: 2
 ]

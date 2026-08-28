@@ -11,8 +11,10 @@ AccountTest >> testPremiumOverdraftBeyondSevenDays [
 	| account result |
 	"Arrange"
 	account := Account type: (AccountType premium: true) daysOverdrawn: 10.
+
 	"Act"
 	result := account overdraftCharge.
+
 	"Assert"
 	self assert: result equals: 16
 ]
@@ -23,8 +25,10 @@ AccountTest >> testStandardOverdraft [
 	| account result |
 	"Arrange"
 	account := Account type: (AccountType premium: false) daysOverdrawn: 10.
+
 	"Act"
 	result := account overdraftCharge.
+
 	"Assert"
 	self assert: result equals: 20
 ]

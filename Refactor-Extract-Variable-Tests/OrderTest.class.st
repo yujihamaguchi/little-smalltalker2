@@ -11,8 +11,10 @@ OrderTest >> testPriceWithQuantityDiscount [
 	| order result |
 	"Arrange"
 	order := Order quantity: 600 itemPrice: 10.
+
 	"Act"
 	result := order price.
+
 	"Assert"
 	self assert: result equals: 6050
 ]
@@ -23,8 +25,10 @@ OrderTest >> testPriceWithoutQuantityDiscount [
 	| order result |
 	"Arrange"
 	order := Order quantity: 400 itemPrice: 10.
+
 	"Act"
 	result := order price.
+
 	"Assert"
 	self assert: result equals: 4100
 ]

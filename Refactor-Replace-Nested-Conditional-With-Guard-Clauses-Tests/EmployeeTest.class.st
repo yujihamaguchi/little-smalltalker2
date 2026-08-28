@@ -11,8 +11,10 @@ EmployeeTest >> testDeadPay [
 	| employee result |
 	"Arrange"
 	employee := Employee dead: true separated: false retired: false.
+
 	"Act"
 	result := employee payAmount.
+
 	"Assert"
 	self assert: result equals: 1
 ]
@@ -23,8 +25,10 @@ EmployeeTest >> testNormalPay [
 	| employee result |
 	"Arrange"
 	employee := Employee dead: false separated: false retired: false.
+
 	"Act"
 	result := employee payAmount.
+
 	"Assert"
 	self assert: result equals: 4
 ]
@@ -35,8 +39,10 @@ EmployeeTest >> testRetiredPay [
 	| employee result |
 	"Arrange"
 	employee := Employee dead: false separated: false retired: true.
+
 	"Act"
 	result := employee payAmount.
+
 	"Assert"
 	self assert: result equals: 3
 ]
@@ -47,8 +53,10 @@ EmployeeTest >> testSeparatedPay [
 	| employee result |
 	"Arrange"
 	employee := Employee dead: false separated: true retired: false.
+
 	"Act"
 	result := employee payAmount.
+
 	"Assert"
 	self assert: result equals: 2
 ]
