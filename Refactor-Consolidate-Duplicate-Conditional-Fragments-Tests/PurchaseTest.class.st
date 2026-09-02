@@ -10,13 +10,13 @@ PurchaseTest >> testNormalTotal [
 
 	| purchase result |
 	"Arrange"
-	purchase := Purchase price: 100 special: false.
+	purchase := Purchase price: 200 special: false.
 
 	"Act"
 	result := purchase total.
 
 	"Assert"
-	self assert: result equals: 100
+	self assert: result equals: 220
 ]
 
 { #category : 'tests' }
@@ -24,11 +24,11 @@ PurchaseTest >> testSpecialTotal [
 
 	| purchase result |
 	"Arrange"
-	purchase := Purchase price: 100 special: true.
+	purchase := Purchase price: 200 special: true.
 
 	"Act"
 	result := purchase total.
 
 	"Assert"
-	self assert: result equals: 95
+	self assert: result equals: 210
 ]

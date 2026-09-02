@@ -25,7 +25,9 @@ Purchase >> setPrice: aPrice special: aBoolean [
 { #category : 'operating' }
 Purchase >> total [
 
+	| shippingFee |
+	shippingFee := 30.
 	special
-		ifTrue: [ ^ (price * 90 / 100) + 5 ]
-		ifFalse: [ ^ (price * 95 / 100) + 5 ]
+		ifTrue: [ ^ (price * 90 / 100) + shippingFee ]
+		ifFalse: [ ^ (price * 95 / 100) + shippingFee ]
 ]
