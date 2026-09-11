@@ -6,7 +6,9 @@ Class {
 }
 
 { #category : 'operating' }
-TimeSheet >> chargeFor: aContractor days: aNumber [
+TimeSheet >> chargeFor: aWorker days: aNumber [
 
-	^ aNumber * aContractor rate * (aContractor hasSpecialSkill ifTrue: [ 2 ] ifFalse: [ 1 ])
+	| multiplier |
+	multiplier := aWorker hasSpecialSkill ifTrue: [ 2 ] ifFalse: [ 1 ].
+	^ aNumber * aWorker rate * multiplier
 ]

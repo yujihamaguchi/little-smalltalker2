@@ -6,7 +6,7 @@ Class {
 }
 
 { #category : 'tests' }
-TimeSheetTest >> testChargeWithSpecialSkill [
+TimeSheetTest >> testChargeForContractor [
 
 	| sheet result |
 	"Arrange"
@@ -17,4 +17,18 @@ TimeSheetTest >> testChargeWithSpecialSkill [
 
 	"Assert"
 	self assert: result equals: 600
+]
+
+{ #category : 'tests' }
+TimeSheetTest >> testChargeForSalariedWorker [
+
+	| sheet result |
+	"Arrange"
+	sheet := TimeSheet new.
+
+	"Act"
+	result := sheet chargeFor: (SalariedWorker monthlySalary: 4000 skilled: false) days: 5.
+
+	"Assert"
+	self assert: result equals: 1000
 ]
