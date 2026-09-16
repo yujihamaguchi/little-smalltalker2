@@ -25,3 +25,9 @@ Duck >> setName: aName [
 
 	name := aName
 ]
+
+{ #category : 'as yet unclassified' }
+Duck >> swim [
+
+	^ 'paddling'
+]

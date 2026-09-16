@@ -20,6 +20,12 @@ Chicken >> describe [
 	^ name, ' the fowl'
 ]
 
+{ #category : 'as yet unclassified' }
+Chicken >> layEgg [
+
+	^ 'egg'
+]
+
 { #category : 'private' }
 Chicken >> setName: aName [
 
