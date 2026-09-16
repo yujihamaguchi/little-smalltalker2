@@ -20,6 +20,20 @@ FowlTest >> testChickenDescribe [
 ]
 
 { #category : 'tests' }
+FowlTest >> testChickenLaysEgg [
+
+	| chicken result |
+	"Arrange"
+	chicken := Chicken name: 'Foghorn'.
+
+	"Act"
+	result := chicken layEgg.
+
+	"Assert"
+	self assert: result equals: 'egg'
+]
+
+{ #category : 'tests' }
 FowlTest >> testDuckDescribe [
 
 	| duck result |
@@ -31,4 +45,18 @@ FowlTest >> testDuckDescribe [
 
 	"Assert"
 	self assert: result equals: 'Donald the fowl'
+]
+
+{ #category : 'tests' }
+FowlTest >> testDuckSwims [
+
+	| duck result |
+	"Arrange"
+	duck := Duck name: 'Donald'.
+
+	"Act"
+	result := duck swim.
+
+	"Assert"
+	self assert: result equals: 'paddling'
 ]
