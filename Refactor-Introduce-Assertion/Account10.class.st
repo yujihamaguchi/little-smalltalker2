@@ -14,6 +14,12 @@ Account10 class >> balance: aBalance [
 	^ self new setBalance: aBalance
 ]
 
+{ #category : 'accessing' }
+Account10 >> balance [
+
+	^ balance
+]
+
 { #category : 'private' }
 Account10 >> setBalance: aBalance [
 
