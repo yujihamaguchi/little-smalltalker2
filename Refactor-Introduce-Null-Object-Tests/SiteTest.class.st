@@ -6,11 +6,11 @@ Class {
 }
 
 { #category : 'tests' }
-SiteTest >> testKnownCustomer [
+SiteTest >> testCustomerNameOfKnownCustomer [
 
 	| site result |
 	"Arrange"
-	site := Site customer: (Customer2 name: 'Alice').
+	site := Site customer: (Customer2 name: 'Alice' plan: 'premium' weeksDelinquent: 2).
 
 	"Act"
 	result := site customerName.
@@ -20,7 +20,7 @@ SiteTest >> testKnownCustomer [
 ]
 
 { #category : 'tests' }
-SiteTest >> testMissingCustomer [
+SiteTest >> testCustomerNameOfMissingCustomer [
 
 	| site result |
 	"Arrange"
@@ -31,4 +31,60 @@ SiteTest >> testMissingCustomer [
 
 	"Assert"
 	self assert: result equals: 'occupant'
+]
+
+{ #category : 'tests' }
+SiteTest >> testCustomerPlanOfKnownCustomer [
+
+	| site result |
+	"Arrange"
+	site := Site customer: (Customer2 name: 'Alice' plan: 'premium' weeksDelinquent: 2).
+
+	"Act"
+	result := site customerPlan.
+
+	"Assert"
+	self assert: result equals: 'premium'
+]
+
+{ #category : 'tests' }
+SiteTest >> testCustomerPlanOfMissingCustomer [
+
+	| site result |
+	"Arrange"
+	site := Site customer: nil.
+
+	"Act"
+	result := site customerPlan.
+
+	"Assert"
+	self assert: result equals: 'basic'
+]
+
+{ #category : 'tests' }
+SiteTest >> testWeeksDelinquentOfKnownCustomer [
+
+	| site result |
+	"Arrange"
+	site := Site customer: (Customer2 name: 'Alice' plan: 'premium' weeksDelinquent: 2).
+
+	"Act"
+	result := site weeksDelinquent.
+
+	"Assert"
+	self assert: result equals: 2
+]
+
+{ #category : 'tests' }
+SiteTest >> testWeeksDelinquentOfMissingCustomer [
+
+	| site result |
+	"Arrange"
+	site := Site customer: nil.
+
+	"Act"
+	result := site weeksDelinquent.
+
+	"Assert"
+	self assert: result equals: 0
 ]
