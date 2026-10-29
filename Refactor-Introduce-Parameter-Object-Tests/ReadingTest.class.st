@@ -18,3 +18,17 @@ ReadingTest >> testInRange [
 	"Assert"
 	self assert: result
 ]
+
+{ #category : 'tests' }
+ReadingTest >> testOutOfRange [
+
+	| reading result |
+	"Arrange"
+	reading := Reading value: 11.
+
+	"Act"
+	result := reading isInRangeLow: 1 high: 10.
+
+	"Assert"
+	self deny: result
+]
