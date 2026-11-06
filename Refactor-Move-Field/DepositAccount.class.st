@@ -2,7 +2,7 @@ Class {
 	#name : 'DepositAccount',
 	#superclass : 'Object',
 	#instVars : [
-		'accountType',
+		'product',
 		'interestRate'
 	],
 	#category : 'Refactor-Move-Field',
@@ -10,9 +10,9 @@ Class {
 }
 
 { #category : 'instance creation' }
-DepositAccount class >> type: aType rate: aRate [
+DepositAccount class >> product: aProduct rate: aRate [
 
-	^ self new setAccountType: aType interestRate: aRate
+	^ self new setProduct: aProduct interestRate: aRate
 ]
 
 { #category : 'operating' }
@@ -28,8 +28,8 @@ DepositAccount >> interestRate [
 ]
 
 { #category : 'private' }
-DepositAccount >> setAccountType: aType interestRate: aRate [
+DepositAccount >> setProduct: aProduct interestRate: aRate [
 
-	accountType := aType.
+	product := aProduct.
 	interestRate := aRate
 ]
