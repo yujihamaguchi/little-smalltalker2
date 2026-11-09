@@ -2,26 +2,42 @@ Class {
 	#name : 'AccountType',
 	#superclass : 'Object',
 	#instVars : [
-		'premium'
+		'freeDays',
+		'flatFee',
+		'dailyRate'
 	],
 	#category : 'Refactor-Move-Method',
 	#package : 'Refactor-Move-Method'
 }
 
 { #category : 'instance creation' }
-AccountType class >> premium: aBoolean [
+AccountType class >> freeDays: aDays flatFee: aFee dailyRate: aRate [
 
-	^ self new setPremium: aBoolean
+	^ self new setFreeDays: aDays flatFee: aFee dailyRate: aRate
 ]
 
 { #category : 'accessing' }
-AccountType >> isPremium [
+AccountType >> dailyRate [
 
-	^ premium
+	^ dailyRate
+]
+
+{ #category : 'accessing' }
+AccountType >> flatFee [
+
+	^ flatFee
+]
+
+{ #category : 'accessing' }
+AccountType >> freeDays [
+
+	^ freeDays
 ]
 
 { #category : 'private' }
-AccountType >> setPremium: aBoolean [
+AccountType >> setFreeDays: aDays flatFee: aFee dailyRate: aRate [
 
-	premium := aBoolean
+	freeDays := aDays.
+	flatFee := aFee.
+	dailyRate := aRate
 ]

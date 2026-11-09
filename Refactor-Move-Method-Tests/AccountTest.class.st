@@ -10,7 +10,9 @@ AccountTest >> testPremiumOverdraftBeyondSevenDays [
 
 	| account result |
 	"Arrange"
-	account := Account type: (AccountType premium: true) daysOverdrawn: 10.
+	account := Account
+		type: (AccountType freeDays: 7 flatFee: 10 dailyRate: 2)
+		daysOverdrawn: 10.
 
 	"Act"
 	result := account overdraftCharge.
@@ -24,7 +26,9 @@ AccountTest >> testStandardOverdraft [
 
 	| account result |
 	"Arrange"
-	account := Account type: (AccountType premium: false) daysOverdrawn: 10.
+	account := Account
+		type: (AccountType freeDays: 0 flatFee: 0 dailyRate: 2)
+		daysOverdrawn: 10.
 
 	"Act"
 	result := account overdraftCharge.

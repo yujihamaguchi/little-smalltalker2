@@ -18,9 +18,8 @@ Account class >> type: aType daysOverdrawn: aNumber [
 { #category : 'operating' }
 Account >> overdraftCharge [
 
-	^ accountType isPremium
-		ifTrue: [ daysOverdrawn > 7 ifTrue: [ 10 + ((daysOverdrawn - 7) * 2) ] ifFalse: [ 10 ] ]
-		ifFalse: [ daysOverdrawn * 2 ]
+	daysOverdrawn <= accountType freeDays ifTrue: [ ^ accountType flatFee ].
+	^ accountType flatFee + ((daysOverdrawn - accountType freeDays) * accountType dailyRate)
 ]
 
 { #category : 'private' }
