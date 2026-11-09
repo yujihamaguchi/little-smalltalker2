@@ -18,3 +18,48 @@ PatientTest >> testBloodGroup [
 	"Assert"
 	self assert: result equals: #O
 ]
+
+{ #category : 'tests' }
+PatientTest >> testCanReceiveFromUniversalDonor [
+
+	| patient donor result |
+	"Arrange"
+	patient := Patient bloodGroup: #A.
+	donor := Patient bloodGroup: #O.
+
+	"Act"
+	result := patient canReceiveFrom: donor.
+
+	"Assert"
+	self assert: result
+]
+
+{ #category : 'tests' }
+PatientTest >> testCannotReceiveFromIncompatibleGroup [
+
+	| patient donor result |
+	"Arrange"
+	patient := Patient bloodGroup: #A.
+	donor := Patient bloodGroup: #B.
+
+	"Act"
+	result := patient canReceiveFrom: donor.
+
+	"Assert"
+	self deny: result
+]
+
+{ #category : 'tests' }
+PatientTest >> testUniversalRecipient [
+
+	| patient donor result |
+	"Arrange"
+	patient := Patient bloodGroup: #AB.
+	donor := Patient bloodGroup: #B.
+
+	"Act"
+	result := patient canReceiveFrom: donor.
+
+	"Assert"
+	self assert: result
+]

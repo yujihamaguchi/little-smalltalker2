@@ -15,6 +15,12 @@ Booking class >> customer: aCustomer [
 ]
 
 { #category : 'operating' }
+Booking >> customerInitials [
+
+	^ (customer substrings collect: [ :each | each first ]) as: String
+]
+
+{ #category : 'operating' }
 Booking >> customerName [
 
 	^ customer

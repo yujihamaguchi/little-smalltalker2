@@ -15,6 +15,14 @@ Worker class >> type: aType [
 ]
 
 { #category : 'operating' }
+Worker >> annualBonus [
+
+	type = #engineer ifTrue: [ ^ 5000 ].
+	type = #manager ifTrue: [ ^ 16000 ].
+	^ self error: 'unknown type'
+]
+
+{ #category : 'operating' }
 Worker >> monthlyPay [
 
 	type = #engineer ifTrue: [ ^ 5000 ].

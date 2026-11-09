@@ -6,6 +6,20 @@ Class {
 }
 
 { #category : 'tests' }
+WorkerTest >> testEngineerBonus [
+
+	| worker result |
+	"Arrange"
+	worker := Worker type: #engineer.
+
+	"Act"
+	result := worker annualBonus.
+
+	"Assert"
+	self assert: result equals: 5000
+]
+
+{ #category : 'tests' }
 WorkerTest >> testEngineerPay [
 
 	| worker result |
@@ -17,6 +31,20 @@ WorkerTest >> testEngineerPay [
 
 	"Assert"
 	self assert: result equals: 5000
+]
+
+{ #category : 'tests' }
+WorkerTest >> testManagerBonus [
+
+	| worker result |
+	"Arrange"
+	worker := Worker type: #manager.
+
+	"Act"
+	result := worker annualBonus.
+
+	"Assert"
+	self assert: result equals: 16000
 ]
 
 { #category : 'tests' }

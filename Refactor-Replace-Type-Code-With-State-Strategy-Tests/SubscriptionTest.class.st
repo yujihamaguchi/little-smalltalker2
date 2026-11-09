@@ -20,6 +20,20 @@ SubscriptionTest >> testFreeFee [
 ]
 
 { #category : 'tests' }
+SubscriptionTest >> testFreeStorageLimit [
+
+	| sub result |
+	"Arrange"
+	sub := Subscription level: #free.
+
+	"Act"
+	result := sub storageLimit.
+
+	"Assert"
+	self assert: result equals: 1
+]
+
+{ #category : 'tests' }
 SubscriptionTest >> testUpgradeChangesFee [
 
 	| sub result |
@@ -32,4 +46,19 @@ SubscriptionTest >> testUpgradeChangesFee [
 
 	"Assert"
 	self assert: result equals: 10
+]
+
+{ #category : 'tests' }
+SubscriptionTest >> testUpgradeChangesStorageLimit [
+
+	| sub result |
+	"Arrange"
+	sub := Subscription level: #free.
+
+	"Act"
+	sub changeLevel: #pro.
+	result := sub storageLimit.
+
+	"Assert"
+	self assert: result equals: 100
 ]

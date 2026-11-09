@@ -33,3 +33,11 @@ Subscription >> setLevel: aLevel [
 
 	level := aLevel
 ]
+
+{ #category : 'operating' }
+Subscription >> storageLimit [
+
+	level = #free ifTrue: [ ^ 1 ].
+	level = #pro ifTrue: [ ^ 100 ].
+	^ self error: 'unknown level'
+]

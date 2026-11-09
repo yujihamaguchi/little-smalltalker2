@@ -6,11 +6,25 @@ Class {
 }
 
 { #category : 'tests' }
+Employee13Test >> testEmail [
+
+	| employee result |
+	"Arrange"
+	employee := Employee13 named: 'Alice' email: 'alice@example.com'.
+
+	"Act"
+	result := employee email.
+
+	"Assert"
+	self assert: result equals: 'alice@example.com'
+]
+
+{ #category : 'tests' }
 Employee13Test >> testName [
 
 	| employee result |
 	"Arrange"
-	employee := Employee13 named: 'Alice'.
+	employee := Employee13 named: 'Alice' email: 'alice@example.com'.
 
 	"Act"
 	result := employee name.

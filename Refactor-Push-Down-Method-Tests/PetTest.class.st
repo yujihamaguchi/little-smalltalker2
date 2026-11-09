@@ -6,6 +6,20 @@ Class {
 }
 
 { #category : 'tests' }
+PetTest >> testHoundBarks [
+
+	| hound result |
+	"Arrange"
+	hound := Hound new.
+
+	"Act"
+	result := hound bark.
+
+	"Assert"
+	self assert: result equals: 'woof'
+]
+
+{ #category : 'tests' }
 PetTest >> testSongbirdSings [
 
 	| bird result |

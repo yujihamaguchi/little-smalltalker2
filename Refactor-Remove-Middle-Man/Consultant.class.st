@@ -26,6 +26,18 @@ Consultant >> company [
 	^ company
 ]
 
+{ #category : 'accessing' }
+Consultant >> companyName [
+
+	^ company name
+]
+
+{ #category : 'accessing' }
+Consultant >> companyPhone [
+
+	^ company phone
+]
+
 { #category : 'private' }
 Consultant >> setCompany: aCompany [
 

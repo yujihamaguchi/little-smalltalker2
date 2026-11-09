@@ -6,6 +6,20 @@ Class {
 }
 
 { #category : 'tests' }
+BookingTest >> testCustomerInitials [
+
+	| booking result |
+	"Arrange"
+	booking := Booking customer: 'Alice Smith'.
+
+	"Act"
+	result := booking customerInitials.
+
+	"Assert"
+	self assert: result equals: 'AS'
+]
+
+{ #category : 'tests' }
 BookingTest >> testCustomerName [
 
 	| booking result |

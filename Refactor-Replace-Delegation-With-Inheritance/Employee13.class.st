@@ -9,9 +9,15 @@ Class {
 }
 
 { #category : 'instance creation' }
-Employee13 class >> named: aName [
+Employee13 class >> named: aName email: anEmail [
 
-	^ self new setPerson: (Person11 name: aName)
+	^ self new setPerson: (Person11 name: aName email: anEmail)
+]
+
+{ #category : 'accessing' }
+Employee13 >> email [
+
+	^ person email
 ]
 
 { #category : 'operating' }

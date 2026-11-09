@@ -20,6 +20,13 @@ Patient >> bloodGroup [
 	^ bloodGroup
 ]
 
+{ #category : 'operating' }
+Patient >> canReceiveFrom: aDonor [
+
+	bloodGroup = #AB ifTrue: [ ^ true ].
+	^ aDonor bloodGroup = #O or: [ aDonor bloodGroup = bloodGroup ]
+]
+
 { #category : 'private' }
 Patient >> setBloodGroup: aGroup [
 
