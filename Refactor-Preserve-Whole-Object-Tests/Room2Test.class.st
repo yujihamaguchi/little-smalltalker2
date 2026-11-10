@@ -6,6 +6,21 @@ Class {
 }
 
 { #category : 'tests' }
+Room2Test >> testOutOfRange [
+
+	| room plan result |
+	"Arrange"
+	room := Room2 temperature: 35.
+	plan := HeatingPlan low: 10 high: 30.
+
+	"Act"
+	result := room withinRangeLow: plan low high: plan high.
+
+	"Assert"
+	self deny: result
+]
+
+{ #category : 'tests' }
 Room2Test >> testWithinRange [
 
 	| room plan result |
