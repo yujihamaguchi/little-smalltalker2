@@ -24,11 +24,11 @@ StaffMemberTest >> testManagerName [
 
 	| manager result |
 	"Arrange"
-	manager := ManagerRole named: 'Boss' bonus: 100.
+	manager := ManagerRole named: 'Bob' bonus: 100.
 
 	"Act"
 	result := manager name.
 
 	"Assert"
-	self assert: result equals: 'Boss'
+	self assert: result equals: 'Bob'
 ]
