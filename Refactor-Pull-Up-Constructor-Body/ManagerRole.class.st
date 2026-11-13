@@ -14,6 +14,12 @@ ManagerRole class >> named: aName bonus: aBonus [
 	^ self new setNamed: aName bonus: aBonus
 ]
 
+{ #category : 'accessing' }
+ManagerRole >> bonus [
+
+	^ bonus
+]
+
 { #category : 'private' }
 ManagerRole >> setNamed: aName bonus: aBonus [
 

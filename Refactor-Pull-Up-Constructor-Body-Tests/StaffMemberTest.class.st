@@ -20,6 +20,20 @@ StaffMemberTest >> testClerkName [
 ]
 
 { #category : 'tests' }
+StaffMemberTest >> testManagerBonus [
+
+	| manager result |
+	"Arrange"
+	manager := ManagerRole named: 'Bob' bonus: 100.
+
+	"Act"
+	result := manager bonus.
+
+	"Assert"
+	self assert: result equals: 100
+]
+
+{ #category : 'tests' }
 StaffMemberTest >> testManagerName [
 
 	| manager result |
