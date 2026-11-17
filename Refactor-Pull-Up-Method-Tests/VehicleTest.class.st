@@ -16,7 +16,7 @@ VehicleTest >> testCarWheelInfo [
 	result := car wheelInfo.
 
 	"Assert"
-	self assert: result equals: 'wheels: 4'
+	self assert: result equals: 'car: 4 wheels'
 ]
 
 { #category : 'tests' }
@@ -30,5 +30,5 @@ VehicleTest >> testTruckWheelInfo [
 	result := truck wheelInfo.
 
 	"Assert"
-	self assert: result equals: 'wheels: 6'
+	self assert: result equals: 'truck: 6 wheels'
 ]

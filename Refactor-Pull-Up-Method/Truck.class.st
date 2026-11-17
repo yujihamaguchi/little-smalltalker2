@@ -5,8 +5,14 @@ Class {
 	#package : 'Refactor-Pull-Up-Method'
 }
 
+{ #category : 'accessing' }
+Truck >> kind [
+
+	^ 'truck'
+]
+
 { #category : 'operating' }
 Truck >> wheelInfo [
 
-	^ 'wheels: ', numberOfWheels printString
+	^ self kind, ': ', numberOfWheels printString, ' wheels'
 ]
