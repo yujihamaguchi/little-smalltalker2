@@ -10,7 +10,7 @@ OrdinaryAccountTest >> testAnnualInterest [
 
 	| account result |
 	"Arrange"
-	account := OrdinaryAccount withRate: 0.2.
+	account := OrdinaryAccount number: '1234567' rate: 0.2.
 
 	"Act"
 	result := account annualInterestOn: 1000000.

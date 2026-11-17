@@ -10,11 +10,25 @@ CheckingAccountTest >> testCheckbookFee [
 
 	| account result |
 	"Arrange"
-	account := CheckingAccount withRate: 0.
+	account := CheckingAccount number: '7654321' rate: 0.
 
 	"Act"
 	result := account checkbookFee.
 
 	"Assert"
 	self assert: result equals: 3300
+]
+
+{ #category : 'tests' }
+CheckingAccountTest >> testNumber [
+
+	| account result |
+	"Arrange"
+	account := CheckingAccount number: '7654321' rate: 0.
+
+	"Act"
+	result := account number.
+
+	"Assert"
+	self assert: result equals: '7654321'
 ]

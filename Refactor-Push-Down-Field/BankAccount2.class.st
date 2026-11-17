@@ -2,6 +2,7 @@ Class {
 	#name : 'BankAccount2',
 	#superclass : 'Object',
 	#instVars : [
+		'number',
 		'interestRate'
 	],
 	#category : 'Refactor-Push-Down-Field',
@@ -9,13 +10,20 @@ Class {
 }
 
 { #category : 'instance creation' }
-BankAccount2 class >> withRate: aRate [
+BankAccount2 class >> number: aNumber rate: aRate [
 
-	^ self new setInterestRate: aRate
+	^ self new setNumber: aNumber interestRate: aRate
+]
+
+{ #category : 'accessing' }
+BankAccount2 >> number [
+
+	^ number
 ]
 
 { #category : 'private' }
-BankAccount2 >> setInterestRate: aRate [
+BankAccount2 >> setNumber: aNumber interestRate: aRate [
 
+	number := aNumber.
 	interestRate := aRate
 ]
