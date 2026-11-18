@@ -10,7 +10,7 @@ PetTest >> testHoundBarks [
 
 	| hound result |
 	"Arrange"
-	hound := Hound new.
+	hound := Hound named: 'Pochi'.
 
 	"Act"
 	result := hound bark.
@@ -20,11 +20,25 @@ PetTest >> testHoundBarks [
 ]
 
 { #category : 'tests' }
+PetTest >> testHoundName [
+
+	| hound result |
+	"Arrange"
+	hound := Hound named: 'Pochi'.
+
+	"Act"
+	result := hound name.
+
+	"Assert"
+	self assert: result equals: 'Pochi'
+]
+
+{ #category : 'tests' }
 PetTest >> testSongbirdSings [
 
 	| bird result |
 	"Arrange"
-	bird := Songbird new.
+	bird := Songbird named: 'Piyo'.
 
 	"Act"
 	result := bird sing.
