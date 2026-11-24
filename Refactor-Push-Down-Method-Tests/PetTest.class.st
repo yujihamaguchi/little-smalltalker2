@@ -34,6 +34,20 @@ PetTest >> testHoundName [
 ]
 
 { #category : 'tests' }
+PetTest >> testSongbirdName [
+
+	| bird result |
+	"Arrange"
+	bird := Songbird named: 'Piyo'.
+
+	"Act"
+	result := bird name.
+
+	"Assert"
+	self assert: result equals: 'Piyo'
+]
+
+{ #category : 'tests' }
 PetTest >> testSongbirdSings [
 
 	| bird result |
